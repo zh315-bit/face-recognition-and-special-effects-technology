@@ -1,16 +1,55 @@
-# 这是一个示例 Python 脚本。
+"""Read an image, convert it to grayscale, and display both versions."""
 
-# 按 Shift+F10 执行或将其替换为您的代码。
-# 按 双击 Shift 在所有地方搜索类、文件、工具窗口、操作和设置。
+import sys
+
+try:
+    import cv2
+except ImportError:
+    cv2 = None
 
 
-def print_hi(name):
-    # 在下面的代码行中使用断点来调试脚本。
-    print(f'Hi, {name}')  # 按 Ctrl+F8 切换断点。
+def load_image(image_path: str):
+    """Load an image from disk or raise a clear error."""
+    if cv2 is None:
+        raise RuntimeError("OpenCV is not installed. Run: pip install opencv-python")
+
+    image = cv2.imread(image_path)
+    if image is None:
+        raise ValueError(f"Could not read image: {image_path}")
+    return image
 
 
-# 按装订区域中的绿色按钮以运行脚本。
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def to_grayscale(image):
+    """Convert a BGR image to a single-channel grayscale image."""
+    if cv2 is None:
+        raise RuntimeError("OpenCV is not installed. Run: pip install opencv-python")
 
-# 访问 https://www.jetbrains.com/help/pycharm/ 获取 PyCharm 帮助
+    return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+
+def show_images(original, grayscale) -> None:
+    """Display the original and grayscale images until a key is pressed."""
+    cv2.imshow("Original", original)
+    cv2.imshow("Grayscale", grayscale)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+
+def main(arguments: list[str]) -> int:
+    """Run the command-line image-processing workflow."""
+    if len(arguments) != 1:
+        print("Usage: python main.py <image-path>")
+        return 2
+
+    try:
+        original = load_image(arguments[0])
+    except (RuntimeError, ValueError) as error:
+        print(error)
+        return 1
+
+    show_images(original, to_grayscale(original))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))
