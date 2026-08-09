@@ -1,36 +1,36 @@
-# Docker Hello World
+# Docker 你好，世界
 
-## Get the correct branch first
+## 先获取正确的分支
 
-The Docker files are on the `docker-hello-world` branch. Clone that branch before building:
+Docker 相关文件位于 `docker-hello-world` 分支。请先克隆该分支，再进行构建：
 
 ```powershell
 git clone -b docker-hello-world https://github.com/zh315-bit/face-recognition-and-special-effects-technology.git
 cd face-recognition-and-special-effects-technology
 ```
 
-If you download a ZIP from GitHub, switch the website to the `docker-hello-world` branch first. The default `main` branch may not contain the `Dockerfile`.
+如果从 GitHub 下载 ZIP 文件，请先在网页上切换到 `docker-hello-world` 分支。默认的 `main` 分支可能不包含 `Dockerfile`。
 
-## Build and run
+## 构建并运行
 
-Run these commands in the directory that contains `Dockerfile`:
+请在包含 `Dockerfile` 的目录中运行以下命令：
 
 ```powershell
 docker build -t face-ai-hello .
 ```
 
-![Successful Docker build](docs/images/docker-build-success.png)
+![Docker 构建成功](docs/images/docker-build-success.png)
 
-Run the container:
+运行容器：
 
 ```powershell
 docker run --rm face-ai-hello
 ```
 
-Expected output:
+预期输出：
 
 ```text
 Hello, World from Docker!
 ```
 
-![Successful Docker run](docs/images/docker-run-success.png)
+![Docker 运行成功](docs/images/docker-run-success.png)
