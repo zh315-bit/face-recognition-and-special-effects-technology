@@ -19,6 +19,8 @@ Run these commands in the directory that contains `Dockerfile`:
 docker build -t face-ai-hello .
 ```
 
+![Successful Docker build](docs/images/docker-build-success.png)
+
 Run the container:
 
 ```powershell
@@ -30,3 +32,5 @@ Expected output:
 ```text
 Hello, World from Docker!
 ```
+
+![Successful Docker run](docs/images/docker-run-success.png)
