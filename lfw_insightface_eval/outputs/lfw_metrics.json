@@ -1,0 +1,55 @@
+{
+  "model": "buffalo_l",
+  "provider": "CPUExecutionProvider",
+  "dataset_root": "lfw",
+  "pairs_file": "lfw\\pairs.txt",
+  "pair_count": 6000,
+  "embedding_count": 7701,
+  "metrics": {
+    "folds": [
+      {
+        "threshold": 0.24887506663799286,
+        "accuracy": 0.9966666666666667
+      },
+      {
+        "threshold": 0.24887506663799286,
+        "accuracy": 1.0
+      },
+      {
+        "threshold": 0.24887506663799286,
+        "accuracy": 1.0
+      },
+      {
+        "threshold": 0.24887506663799286,
+        "accuracy": 0.9983333333333333
+      },
+      {
+        "threshold": 0.26103487610816956,
+        "accuracy": 0.9933333333333333
+      },
+      {
+        "threshold": 0.24887506663799286,
+        "accuracy": 0.9983333333333333
+      },
+      {
+        "threshold": 0.24887506663799286,
+        "accuracy": 0.9966666666666667
+      },
+      {
+        "threshold": 0.24887506663799286,
+        "accuracy": 1.0
+      },
+      {
+        "threshold": 0.24521757662296295,
+        "accuracy": 0.9983333333333333
+      },
+      {
+        "threshold": 0.24887506663799286,
+        "accuracy": 1.0
+      }
+    ],
+    "accuracy": 0.9981666666666668,
+    "std": 0.0020344259359556215
+  },
+  "elapsed_seconds": 14269.056
+}

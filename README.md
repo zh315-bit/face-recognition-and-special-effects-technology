@@ -33,3 +33,17 @@ python mmpose_face_keypoints.py --device cuda:0
 ```powershell
 python -m unittest tests.test_mmdet_coco_detection tests.test_mmpose_face_keypoints
 ```
+
+## LFW InsightFace 验证
+
+`lfw_insightface_eval/evaluate_lfw.py` 使用 InsightFace `buffalo_l` 预训练模型，依据 LFW 官方 `pairs.txt` 配对协议进行人脸验证。为控制 CPU 负荷，当前基线评测抽取 50 对平衡配对（25 对同人、25 对不同人，最多 100 张图片引用），并使用 10 折交叉验证。
+
+```powershell
+python lfw_insightface_eval/evaluate_lfw.py --dataset-root lfw
+```
+
+本次快速基线结果为：平均验证准确率 **100.0%**，10 折标准差 **0.0**，各折阈值约为 **0.31**。该结果仅反映 50 对小规模子集的表现，不等同于完整 LFW 6000 对官方评测结果。完整评测可使用：
+
+```powershell
+python lfw_insightface_eval/evaluate_lfw.py --dataset-root lfw --max-pairs 6000 --det-size 640
+```
