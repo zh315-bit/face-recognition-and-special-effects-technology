@@ -1,0 +1,2 @@
+module_quantization/models/*.pt filter=lfs diff=lfs merge=lfs -text
+module_quantization/models/*.onnx filter=lfs diff=lfs merge=lfs -text

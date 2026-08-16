@@ -1,0 +1,8 @@
+{
+  "source_checkpoint": "runs\\resnet50_arcface\\epoch_2.pt",
+  "output_artifact": "runs\\resnet50_arcface\\epoch_2_dynamic_int8.pt",
+  "source_bytes": 700264111,
+  "output_bytes": 136138021,
+  "embedding_input_seed": 0,
+  "max_embedding_absolute_error": 0.0009664297103881836
+}

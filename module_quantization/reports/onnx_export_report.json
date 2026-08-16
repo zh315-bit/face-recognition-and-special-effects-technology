@@ -1,0 +1,17 @@
+{
+  "source_checkpoint": "runs\\resnet50_arcface\\epoch_2.pt",
+  "onnx_model": "runs\\resnet50_arcface\\epoch_2.onnx",
+  "onnx_opset": 17,
+  "input_name": "images",
+  "output_name": "embeddings",
+  "dynamic_batch": true,
+  "input_seed": 0,
+  "max_embedding_absolute_error": 8.940696716308594e-08,
+  "max_allowed_absolute_error": 0.0001,
+  "onnxruntime_cpu_benchmark": {
+    "warmup_runs": 10,
+    "timed_runs": 20,
+    "mean_latency_ms": 313.9246050006477,
+    "throughput_images_per_second": 3.1854782456377917
+  }
+}
